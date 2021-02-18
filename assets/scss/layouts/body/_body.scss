@@ -7,6 +7,9 @@
 //
 // =============================================================================
 
+body.customer {
+    padding-top: calc(#{$header-height} + 50px);
+}
 
 .body {
     margin-bottom: spacing("double") * 2;

@@ -57,7 +57,11 @@
         {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
         {{~inject 'validationDefaultDictionaryJSON' (langJson 'default_messages')}} 
     </head>
+    {{#if customer}}
+    <body class="customer">
+    {{else}}
     <body>
+    {{/if}}
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
         {{> components/common/header }}

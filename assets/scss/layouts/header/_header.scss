@@ -204,6 +204,20 @@
     }
 }
 
+.customer-banner {
+    height: 50px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color-secondary;
+    background: $color-primaryDarker;
+    
+    a {
+        color: $color-highlight;
+    }
+}
+
 //
 // Mobile Menu Toggle
 //

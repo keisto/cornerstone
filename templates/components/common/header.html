@@ -28,6 +28,9 @@
     <div class="navPages-container" id="menu" data-menu>
         {{> components/common/navigation-menu}}
     </div>
+    {{#if customer}}
+        {{> components/common/customer-banner}}
+    {{/if}}
 </header>
 {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}}

@@ -3,6 +3,7 @@ category:
     shop_by_price: true
     products:
         limit: {{theme_settings.categorypage_products_per_page}}
+cart: true
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 {{inject "categoryId" category.id}}
@@ -32,6 +33,10 @@ category:
 {{/unless}}
 {{{category.description}}}
 <div class="page">
+    <button id="add-all-to-cart" class="button button--primary">Add All To Cart</button>
+    {{#if cart.quantity}}
+        <button id="remove-all-items" class="button button--secondary">Remove All Items</button>
+    {{/if}}
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}

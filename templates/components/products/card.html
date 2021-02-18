@@ -21,15 +21,19 @@
            aria-label="{{name}},{{> components/products/product-aria-label}}"
            {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
         >
-            <div class="card-img-container">
-                {{> components/common/responsive-img
-                    image=image
-                    class="card-image"
-                    fallback_size=theme_settings.productgallery_size
-                    lazyload=theme_settings.lazyload_mode
-                    default_image=theme_settings.default_image_product
-                }}
-            </div>
+            {{#each images}}
+                {{#if @index '<' 2 }}
+                <div class="card-img-container {{#if @index '>' 0 }} u-hidden {{/if}}">
+                    {{> components/common/responsive-img
+                        image=this
+                        class="card-image"
+                        fallback_size=theme_settings.productgallery_size
+                        lazyload=theme_settings.lazyload_mode
+                        default_image=theme_settings.default_image_product
+                    }}
+                </div>
+                {{/if}}
+            {{/each}}
         </a>
 
         <figcaption class="card-figcaption">
